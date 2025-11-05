@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio | Mamoun Issa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Mamoun Issa</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <span class="close-btn">✖</span>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Hi, I'm Mamoun</h2>
+    <p>Web Developer | Designer | Problem Solver</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="about" class="about section">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate web developer who loves building clean, functional, and creative websites.
+      I enjoy solving coding challenges and learning new technologies to constantly improve my craft.
+    </p>
+  </section>
+
+  <section id="skills" class="skills section">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Java</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects section">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <img src="127.0.0.1_5500_portfolio.html_.png" alt="Project 1" />
+        <h3>Portfolio Website</h3>
+        <p>A simple personal portfolio website built using HTML, CSS, and Flexbox.</p>
+      </div>
+
+      <div class="project">
+        <img src="Screenshot 2025-10-25 142821.png" alt="Project 2" />
+        <h3>To-Do App</h3>
+        <p>A web-based to-do list application using HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mamounissa44@gmail.com">mamounissa44@gmail.com</a></p>
+    <p>Phone: +972 59-890-0714</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Mamoun Issa. All rights reserved.</p>
+  </footer>
+
+  <script>
+  
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 20) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+  });
+
+ 
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const closeBtn = document.querySelector(".close-btn");
+  const links = document.querySelectorAll(".nav-links a");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.add("active");
+    closeBtn.style.display = "block";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    closeBtn.style.display = "none";
+  });
+
+  
+  document.addEventListener("click", (e) => {
+    if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+      navLinks.classList.remove("active");
+      closeBtn.style.display = "none";
+    }
+  });
+
+  
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      closeBtn.style.display = "none";
+    });
+  });
+</script>
+</body>
+</html>
